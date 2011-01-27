@@ -1,0 +1,34 @@
+These are some really quick scripts and code I wrote for fuzzing. I don't fuzz or have fuzz farms or even fuzz for more than 2 minutes at a time once every 4 years. It's not production quality code - but for an example of sequitur based fuzzing, you might have trouble finding anything else public.
+
+--
+
+SequiturFuzzer based fuzzing constructs context free grammars from binary input, mutates the grammar, then executes the grammar to create binary output. This a pipeline oriented tool and you might want to check the code in Launcher/SequitorFuzzer.sh for an example of how to use it. OK. I'll give you an example -->
+
+	cat $filename | ./Sequitor|./SequitorFuzzer|./SequitorOutput > $mutatedfile
+
+You'd be suprised how little code is required to implement this since I reused an existing sequitur library. The spelling is wrong in my code, it's sequitur not sequitor.
+
+-
+
+MutationFuzzer based fuzzing mutates binary input.
+
+-
+
+FuzzerCodeCoverage is essentially Dion Blazakis' pintool to extract code coverage through dynamic binary instrumentation.
+
+-
+
+MaximumCoverage takes in a set of code coverage results from FuzzerCodeCoverage and generates an ordering of the runs so that maximum code coverage is achieved with the minimum number of runs at each step.  The percentage of covered code is also given for each new run.
+
+-
+
+CodeCoverageSoFar is a tool to generate data for graphs on code coverage given an ordered list of runs.
+
+-
+
+Launcher is some scripts and code to launch fuzzing runs. The shell scripts won't work for you unless you modify them.
+
+--
+Silvio Cesare
+silvio.cesare _a_t_ gmail _d_o_t_ com
+Deakin University
