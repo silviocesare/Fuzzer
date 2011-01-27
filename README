@@ -8,6 +8,10 @@ SequiturFuzzer based fuzzing constructs context free grammars from binary input,
 
 You'd be suprised how little code is required to implement this since I reused an existing sequitur library. The spelling is wrong in my code, it's sequitur not sequitor.
 
+Two papers that reference sequitur and context free grammar based fuzzing -->
+http://www.usenix.org/event/lisa06/tech/slides/kaminsky.pdf
+http://www.usenix.org/event/woot08/tech/full_papers/viide/viide.pdf
+
 -
 
 MutationFuzzer based fuzzing mutates binary input.
